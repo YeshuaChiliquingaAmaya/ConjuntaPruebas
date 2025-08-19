@@ -1,0 +1,57 @@
+“Clima & Conversión”
+
+PARTE 1 — CI (lógica + pruebas sobre funciones)
+
+Funciones obligatorias (en src/utils/)
+
+toCelsius(f)
+Fórmula: °C = (°F − 32) × 5/9
+Redondeo: 1 decimal.
+Validación: si f no es número finito → lanzar TypeError.
+toFahrenheit(c)
+Fórmula: °F = (°C × 9/5) + 32
+Redondeo: 1 decimal.
+Validación: si c no es número finito → TypeError.
+movingAverage(series, window)
+·       Dada una serie de números series = [x₁, x₂, …, xₙ] y una ventana w (entero ≥ 2), la media móvil simple genera otra serie donde cada elemento es el promedio de w valores consecutivos de la original.
+
+series: arreglo de números; window: entero ≥ 2 y ≤ series.length.
+Resultado redondeado a 2 decimales.
+Errores: valores no numéricos → TypeError; ventana fuera de rango → RangeError.
+Casos de referencia que deben pasar en tests (sin buscarlos en internet):
+
+32°F → 0.0°C ; 0°C → 32.0°F ; 100°C → 212.0°F ; −40°C ↔ −40°F
+movingAverage([10,20,30,40], 2) → [15.00, 25.00, 35.00]
+movingAverage([1,2,3], 3) → [2.00]
+Criterios de aceptación CI
+
+CI corre en push/PR a main.
+Lint sin errores.
+Cobertura mínima ≥ 80% (líneas y ramas).
+PR bloqueado si la CI falla.
+PARTE 2 — CD (despliegue a Firebase con página estática)
+
+Página requerida
+
+Título: “Perfil — Clima & Conversión”.
+Contenido mínimo:
+Yeshua Amador Chiliquinga Amaya, 23311, yachiliquinga1@espe.edu.ec
+
+Soy Yeshua Chiliquinga, soy entusiasta del software Libre,, me gusta el sistema operativos de GNU/Linux, uso Arch como sistema operativo principal, hoy tengo presentación sobre como nuestros datos están regados en la red, y gratis en el Aula Interactiva. Soy Lider de la rama de Ciberseguridad del cliub de software.
+
+Uso Archlinux como sistema principal
+Mi videojuego favorito es Dark Souls
+Me gusta el encebollado
+
+Estilos básicos:
+Paleta de 2–3 colores; tipografía sans; layout centrado; encabezado y pie de página simples.
+Criterios de aceptación CD
+
+Preview visible en el PR (URL única del preview).
+Live al hacer merge a main (condicionado a CI verde).
+Evidencias en el PDF (23311 A)
+
+Captura del PR con: CI en verde + URL de Preview.
+Capturas de error en el Lint y y en las pruebas
+Capturas del run de CI: lint OK, resumen de tests, cobertura ≥ 80%.
+Captura del deploy Live: URL productiva y commit/sha desplegado.
